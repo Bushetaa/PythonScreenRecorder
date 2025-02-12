@@ -345,8 +345,8 @@ class ScreenRecorder:
     
     def _find_ffmpeg(self):
         possible_paths = [
-            r'D:\work\ghayma\ffmpeg\ffmpeg-master-latest-win64-gpl\bin\ffmpeg.exe',
-            r'C:\Windows\System32\ffmpeg',
+            r'D:\ffmpeg.exe',
+            r'C:\ffmpeg',
             os.path.join(os.getcwd(), 'ffmpeg.exe')
         ]
         
