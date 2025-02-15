@@ -282,6 +282,7 @@ class ScreenRecorder:
                 Params={'Bucket': BUCKET_NAME, 'Key': object_key},
                 ExpiresIn=expiration
             )
+            print(f"Generated presigned URL: {url}")  # طباعة الرابط للتحقق
             return url
         except Exception as e:
             self.log_status(f"Error generating presigned URL: {e}")
@@ -299,6 +300,8 @@ class ScreenRecorder:
             download_url = self.generate_presigned_url(s3_path)
             if download_url:
                 self.download_label.config(text=f"Download URL: {download_url}")
+            else:
+                self.log_status("Failed to generate download URL.")
         except Exception as e:
             self.log_status(f"Error uploading file: {e}")
 
